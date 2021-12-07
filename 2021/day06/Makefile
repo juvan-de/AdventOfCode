@@ -6,13 +6,13 @@
 #    By: julesvanderhoek <julesvanderhoek@studen      +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/18 15:01:24 by julesvander   #+#    #+#                  #
-#    Updated: 2021/12/07 13:23:57 by juvan-de      ########   odam.nl          #
+#    Updated: 2021/12/07 14:37:04 by juvan-de      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= 	d6e0
+NAME		= 	d6e1
 
-SOURCES		=	ex00.cpp
+SOURCES		=	ex01.cpp
 
 OBJECTS 	=	${SOURCES:%.cpp=%.o}
 

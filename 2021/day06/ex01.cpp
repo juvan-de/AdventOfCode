@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ex00.cpp                                           :+:    :+:            */
+/*   ex01.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: juvan-de <juvan-de@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/07 13:26:35 by juvan-de      #+#    #+#                 */
-/*   Updated: 2021/12/07 14:28:55 by juvan-de      ########   odam.nl         */
+/*   Updated: 2021/12/07 17:18:46 by juvan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,25 +30,29 @@ int		main(void)
 	std::string	buffer;
 	std::ifstream	input;
 	std::vector<int>		fish_list;
-	size_t	size;
+	size_t			array[9] = {0,0,0,0,0,0,0,0,0};
+	size_t			temp;
 
 	input.open("input.txt");
 	getline(input, buffer);
 	fish_list = parse_input(buffer);
-	for (int i = 1; i < 81; i++)
+	size_t	res = 0;
+	for (int i = 0; i < fish_list.size(); i++)
 	{
-		size = fish_list.size();
-		for (int j = 0; j < size; j++)
-		{
-			if (fish_list[j] == 0)
-			{
-				fish_list[j] = 6;
-				fish_list.push_back(8);
-			}
-			else
-				fish_list[j]--;
-		}
+		array[fish_list[i]]++;
 	}
-	std::cout << fish_list.size() << std::endl;
+	for (int i = 0; i < 256; i++)
+	{
+		temp = array[0];
+		for (int j = 0; j < 8; j++)
+		{
+			array[j] = array[j + 1];
+		}
+		array[6] += temp;
+		array[8] = temp;
+	}
+	for (int i = 0; i < 9; i++)
+		res += array[i];
+	std::cout << res << std::endl;
 	return (0);
 }
