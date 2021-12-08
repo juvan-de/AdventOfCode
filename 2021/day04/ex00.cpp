@@ -6,7 +6,7 @@
 /*   By: julesvanderhoek <julesvanderhoek@studen      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/05 13:43:09 by julesvander   #+#    #+#                 */
-/*   Updated: 2021/12/06 12:29:26 by julesvander   ########   odam.nl         */
+/*   Updated: 2021/12/08 13:42:06 by juvan-de      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,6 @@ int		check_for_bingo(std::vector<std::vector<bingonum> > & boards)
 	{
 		for (int j = 0; j < 25; j += 6)
 		{
-//			std::cout << j << " " << boards[i][j].num << std::endl;
 			if (boards[i][j].ticked == true)
 			{
 				if (check_row(boards[i], j) || check_column(boards[i], j))
