@@ -6,11 +6,11 @@
 #    By: julesvanderhoek <julesvanderhoek@studen      +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/02/06 02:09:11 by julesvander   #+#    #+#                  #
-#    Updated: 2021/12/03 14:08:14 by juvan-de      ########   odam.nl          #
+#    Updated: 2021/12/13 14:56:52 by julesvander   ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 		= 	ex00
+NAME 		= 	ex01
 
 SOURCES		= 	day3_2.cpp
 
