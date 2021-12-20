@@ -6,7 +6,7 @@
 /*   By: julesvanderhoek <julesvanderhoek@studen      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/17 13:28:38 by julesvander   #+#    #+#                 */
-/*   Updated: 2021/12/17 20:32:24 by julesvander   ########   odam.nl         */
+/*   Updated: 2021/12/20 12:51:08 by julesvander   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,12 +82,9 @@ t_probe	probe_init(t_target target)
 int	probe_hit(t_probe probe, t_target target)
 {
 	int max_height = 0;
-	bool test = false;
 
 	while (probe.y_pos >= target.y_max)
 	{
-		if (test)
-			std::cout << "[" << probe.x_pos << "," << probe.y_pos << "]" << std::endl;
 		if (probe.x_pos >= target.x_min && probe.x_pos <= target.x_max && probe.y_pos <= target.y_min && probe.y_pos >= target.y_max)
 			return (1);
 		probe.x_pos += probe.x_sped;
@@ -112,14 +109,12 @@ int		main(void)
 	target = parse_target(buffer);
 	probe = probe_init(target);
 	probe.x_sped = 1;
-//	std::cout << probe.x_sped << "\t" << target.x_max << std::endl;
 	while (probe.x_sped <= target.x_max)
 	{
 		probe.y_sped = target.y_max;
 		probe.x_sped++;
-		while (probe.y_sped <= 100)
+		while (probe.y_sped <= 88)
 		{
-//			std::cout <<"[" << probe.x_sped << "," << probe.y_sped << "]" << std::endl;
 			if (probe_hit(probe, target))
 			{
 				hits++;
